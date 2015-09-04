@@ -2,6 +2,8 @@
 
 This sample shows how to use all of the HTTP verbs with the `$http` service available form angularjs to interact with a data set in [Parse.com](http://www.parse.com).
 
+[See Documentation on $http Service in AngularJS](https://docs.angularjs.org/api/ng/service/$http)
+
 ----
 
 ####Configure Your Environment for Ionic Framework:
@@ -15,9 +17,14 @@ This sample shows how to use all of the HTTP verbs with the `$http` service avai
 + Create an account in [Parse](https://www.parse.com/apps)
 + Create a new application by clicking on "Create a new App" Button in the Dashboard
 + Create a user in that new application, set the username to `admin` and the password to `test`
+
+    **Screen Shot: Creating a new user account in application**
 ![alt tag](screenshots/Screenshot-Add-A-User.png)
 + Create a new file in the `www\js` directory of the application called `credentials.js` 
 + Go to the Settings - Keys Section and copy appropriate keys and replace them in the `credentials.js` file you just created
+
+    **Screen Shot: Locating authentcation keys for application**
+![alt tag](screenshots/Screenshot-Show-App-Keys.png)
 
 ####credentials.js example format
 
