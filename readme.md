@@ -12,9 +12,10 @@ This sample shows how to use all of the HTTP verbs with the `$http` service avai
 
 ####For this sample to work you must do the following:
 
-+ Create an account in Parse
-+ Create a new application
++ Create an account in [Parse](https://www.parse.com/apps)
++ Create a new application by clicking on "Create a new App" Button in the Dashboard
 + Create a user in that new application, set the username to `admin` and the password to `test`
+![alt tag](screenshots/Screenshot-Add-A-User.png)
 + Create a new file in the `www\js` directory of the application called `credentials.js` 
 + Go to the Settings - Keys Section and copy appropriate keys and replace them in the `credentials.js` file you just created
 
