@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="starter">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/credentials.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-controller="AppCtrl">
+
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Working with REST API &amp; Parse</h1>
+            <button class="button" ng-click="doLogin()">Login</button>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item class="card">
+                    <div class="item-text-wrap padding">
+                        Creates new item of "stuff" using the POST verb.
+                    </div>
+
+                    <label class="item item-input">
+                        <input type="text" ng-model="uiData.nameValue" placeholder="Name of stuff" />
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" ng-model="uiData.roomValue" placeholder="Room where stuff is located" />
+                    </label>
+                    <button class="button button-block" ng-click="postStuff()">Create Stuff</button>
+                    <div class="padding"></div>
+                </ion-item>
+                <ion-item class="card">
+                    <div class="item-text-wrap padding">
+                        Modifies existing item of "stuff" using the PUT verb; this requires the id of the object you want to modify.
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" ng-model="uiData.objectId" placeholder="object id of stuff" />
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" ng-model="uiData.nameValue" placeholder="Name of stuff" />
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" ng-model="uiData.roomValue" placeholder="Room where stuff is located" />
+                    </label>
+                    <button class="button button-block" ng-click="putStuff()">Update Stuff</button>
+                    <div class="padding"></div>
+                </ion-item>
+                <ion-item class="card">
+                    <div class="item-text-wrap padding">
+                        Returns a list of Stuff.
+                    </div>
+                    <button class="button button-block" ng-click="getStuffList()">
+                        Get List of Stuff
+                    </button>
+                </ion-item>
+
+                <ion-item class="card">
+                    <div class="item-text-wrap padding">
+                        Gets a specific stuff item based on an unique identifier
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" ng-model="uiData.objectId" placeholder="object id of stuff" />
+                    </label>
+                    <button class="button button-block" ng-click="getStuff(uiData.objectId)">
+                        Get Stuff by ID
+                    </button>
+                </ion-item>
+
+                <ion-item class="card">
+                    <div class="item-text-wrap padding">
+                        Deletes a specific stuff item based on an unique identifier
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" ng-model="uiData.objectId" placeholder="object id of stuff" />
+                    </label>
+                    <button class="button button-block" ng-click="deleteStuff(uiData.objectId)">
+                        Delete Stuff by ID
+                    </button>
+                </ion-item>
+                <ion-item class="card">
+                    <h3>Server Responses Displayed Below:</h3>
+                    <pre style="font-size:smaller">{{apiResponseData|json}}</pre>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-pane>
+</body>
+
+</html>
